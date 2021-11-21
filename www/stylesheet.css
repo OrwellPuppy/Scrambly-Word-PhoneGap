@@ -1,0 +1,456 @@
+:root {
+
+    --myLightPurple:rgb(158,88,243);
+    --myDarkPurple:rgb(122,26,239);
+    --myGrey:rgb(50,50,50);/*outline*/
+    --myBackground:rgb(0,0,0);
+    --myButtonBackground:rgb(83,148,218);
+    --myGreen:rgb(0,166,118);
+    --myWordGrey:rgb(190,190,190);
+    
+    --myWhite:rgb(240,240,240);
+    /*
+    --borderColor:rgb(20,19,19);
+    --tileLight:rgb(159,177,188);
+    */
+}
+
+
+div{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Gets rid of the brief blue highlight on tap */
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+*:focus{
+    outline: none !important;
+}
+
+
+.letter {
+    text-align: center;
+    vertical-align: middle;
+
+    color: var(--myWhite);
+    font-family: "Lucida Console", "Monaco", monospace;
+    position: absolute;
+
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    cursor: pointer;
+
+    z-index:10;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all line-height: 50px;*/
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+    
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+ }
+
+.letter.found {
+    background-color: var(--myLightPurple);
+}
+
+.letter.notFound {
+    background-color: var(--myDarkPurple);
+}
+
+.bonus{
+    position:absolute;
+    font-family: times;
+    color:rgb(0,160,69);
+    z-index: 100;
+    width:50px;
+    text-align:left;
+}
+
+.correctWord{
+    font-family: "Lucida Console", "Monaco", monospace;
+    color:var(--myWordGrey);;
+    z-index: 10;
+    margin:auto;
+
+
+    /*Horizontal center:*/
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* ||||| MINI LETTER AND SUBCLASSES ||||| */
+.miniLetter {
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Lucida Console", "Monaco", monospace;
+    display: inline-block;
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    z-index: 20;
+
+}
+
+ .miniLetter.prepare{
+    position:absolute;
+    z-index:100;
+ }
+
+.miniLetter.ungot {
+    background-color: var(--myGrey);
+    color: var(--myBackground);
+}
+
+.miniLetter.got {
+    background-color: var(--myDarkPurple);
+    color: var(--myWhite);
+}
+
+/* ||||| AREAS ||||| */
+#lettersArea {
+    display: inline-block;    
+    height: 56px;
+    text-align: center;
+    color: #FFFFFF;    
+    /*border-left: 2px solid var(--myGrey);
+    border-right: 2px solid var(--myGrey);
+    border-bottom: 2px solid var(--myGrey);
+    background-color: var(--myBackground);
+    margin-left:-2;
+    margin-right:-2;*/
+    opacity:0;
+}
+
+#guessArea {
+    position:relative;
+    display: inline-block;
+    height: 56px;
+    text-align: center;
+    /*color: #FFFFFF;*/
+    border: 2px solid var(--myBackground);    
+    margin-left:-2;
+    margin-right:-2;
+    z-index: 1;
+    background-color: var(--myGrey);
+}
+
+#gotArea {
+    position:relative;
+    display: inline-block;
+    text-align: center;
+    overflow: visible;
+    color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    margin-left:-2;
+    margin-right:-2;
+}
+
+#clock{
+    display: inline-block;
+    font-size:16;
+    width: 60px;
+    height: 15px;
+    vertical-align: top;
+    font-family: times;
+    border-radius: 4px;
+    /*border: 2px solid var(--myGrey);*/
+    margin-bottom: 1px;
+    color: var(--myWhite);
+    background-color: var(--myGrey);
+ }
+
+.littleGreenShadow{
+    box-shadow: 0px 0px 8px 1px var(--myGreen) inset;
+}
+.mediumGreenShadow{
+    box-shadow: 0px 0px 14px 1px var(--myGreen) inset;
+}
+.bigGreenShadow{
+    box-shadow: 0px 0px 20px 2px var(--myGreen) inset;
+}
+.extraBigGreenShadow{
+    box-shadow: 0px 0px 26px 4px var(--myGreen) inset;
+}
+
+.addTransition{
+    -webkit-transition: box-shadow 2s linear;
+    -moz-transition: box-shadow 2s linear;
+    transition: box-shadow 2s linear;    
+}
+
+.addLongTransition{
+    -webkit-transition: box-shadow 3s linear;
+    -moz-transition: box-shadow 3s linear;
+    transition: box-shadow 3s linear;    
+}
+
+.inlineMe{
+    display: inline-block;
+}
+
+#infoDiv{
+    text-align: right;
+}
+
+#scoreDiv{
+    
+    display: inline-block;
+
+}
+
+#pLabel{
+    color:var(--myWordGrey);
+    display: inline-block;
+    text-align: right;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: times;
+}
+
+#pBoard{
+    color:var(--myWordGrey);
+    display: inline-block;
+    text-align: right;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: times;
+}
+
+#correctArea{
+    display: inline-block;
+    text-align: center;
+    height:28;
+    overflow:hidden;
+    margin-left:-2;
+    margin-right:-2;
+}
+#restartMenu{
+    /*position: absolute;*/
+    background-color: var(--myGrey);
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+    /*height:70%;*/
+    /*top:12%;*/
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    display: inherit;
+    z-index: 1;
+    
+}
+#introMenu{
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+    /*height:70%;*/
+    /*top:12%;*/
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    display: inherit;
+    z-index: 1;
+}
+
+#titleblockDiv{
+    width:200px;
+    display: inline-block;
+    line-height:normal;
+}
+
+h1{
+    color: var(--myWordGrey);
+    margin:0px;
+    font-weight: normal;
+    /*margin-bottom:5%;*/
+}
+h2{
+    /*margin-top:5%;*/
+
+}
+
+h3{
+    margin-top:0px;
+    font-weight: normal;
+}
+
+.smallHeader{
+    color: var(--myWordGrey);
+    margin-bottom:0px;
+    margin-left:8%;
+    margin-right:8%;
+}
+
+title{
+    font-weight: bold;
+    text-align: center;
+    margin-top:10%;
+ }
+
+.titleFont{
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    display:block;
+    z-index:1;
+    color(--myWordGrey);
+
+}
+
+.titleFont2{
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+    display:inline-block;
+    z-index:1;
+    color:var(--myDarkPurple);
+}
+
+#title1{
+    display: inline-block;
+    margin-top:1px;
+}
+
+#titleSpacer{
+}
+
+.skillButton{
+    background-color: var(--myButtonBackground);
+    border-color: var(--myButtonBackground);
+    width: 85%;
+    height: 10%;
+    /*line-height: 100%;*/
+    /*min-height:40px;*/
+    top:30%;
+    margin: 6px;
+    /*margin-bottom: 3%;*/
+    font-size:18;
+    font-family: "Lucida Console", "Monaco", monospace;
+    /*min-height: 42px;*/
+    border-radius: 9999px;
+    padding:0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controlButton{
+    font-family: "Lucida Console", "Monaco", monospace;
+    background-color: var(--myButtonBackground);
+    border: 2px solid var(--myButtonBackground);
+    display: inline-block;
+    font-size:20;
+    text-align: center;
+    border-radius: 9999px;
+    margin-left: -1px;
+    margin-right: -1px;
+    height: 30px;
+    /*line-height:30px;*/
+    cursor: pointer;
+}
+
+#messageBox{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    color:var(--myWordGrey);
+}
+
+#scoreBox{
+    margin-top: 1%;
+    margin-bottom: 3%;
+    color:var(--myWordGrey);
+}
+
+#pane{
+    background-color: var(--myBackground);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height:100%;
+    width:100%;
+    overflow: visible;
+    display:inline-block;
+    /*margin-top:1px;
+    margin-bottom:1px;*/
+}
+
+#main{
+    background-color: var(--myBackground);
+    position:absolute;
+    text-align: center;
+    min-width: 150;
+    min-height: 150;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+}
+
+#myList{   
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:1%;
+    margin-top:1%;
+    padding-left:0px;
+    list-style-position:inside;
+    text-align:left;
+    /*width:100%;*/
+    color:var(--myWordGrey);
+}
+
+#highScoreTitle{
+    color:var(--myWordGrey);
+}
+
+.menuSize{
+    margin-left:16%;
+    margin-right:16%;
+    /*margin-bottom:1%;*/
+    border-bottom: 1px solid var(--myWordGrey);
+    border-top: 1px solid var(--myWordGrey);
+}
+
+
+li{
+    padding-left:25%;
+    overflow:visible;
+}
+
+.highlight{
+    font-weight: bold;
+    background-color:var(--myLightPurple);
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*just FYI that these classes are used*/
+.autoWidth{}
+.autoWidth2{}
+.autoHeight{}
+.spacerHeight{}
+.autoFontSize{}
+
+/*
+.test{
+    border: 1px solid rgb(20,20,20);
+}

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<widget id="com.scrambly.word" versionCode='10010' version="1.1.0">
+    <plugin name="cordova-plugin-splashscreen" spec="~1" source="npm" />
+    <name>Scrambly Word</name>
+    <description>
+        A quick word game.
+    </description>
+    <author email="scramblyword@gmail.com" href="www.scramblyword.com">
+        Jonathan Hathhorn
+    </author>
+
+    <platform name="android">
+        <resource-file src="www/res/values/colors.xml" target="/app/src/main/res/values/colors.xml" />
+        <preference name="android-manifest/application/activity/@android:theme" value="@android:style/Theme.Translucent.NoTitleBar" />
+        <preference name="SplashScreen" value="screen"/>
+        <preference name="SplashMaintainAspectRatio" value="true"/>
+        <preference name="SplashShowOnlyFirstTime" value="true"/>
+        
+        <icon background="@color/background" density="ldpi" foreground="www/res/icon/androidForeground/ldpi.png"/>
+        <icon background="@color/background" density="mdpi" foreground="www/res/icon/androidForeground/mdpi.png"/>
+        <icon background="@color/background" density="hdpi" foreground="www/res/icon/androidForeground/hdpi.png"/>
+        <icon background="@color/background" density="xhdpi" foreground="www/res/icon/androidForeground/xhdpi.png"/>
+        <icon background="@color/background" density="xxhdpi" foreground="www/res/icon/androidForeground/xxhdpi.png"/>
+        <icon background="@color/background" density="xxxhdpi" foreground="www/res/icon/androidForeground/xxxhdpi.png"/>
+
+         <!--  Splash  -->
+        <splash density="port-ldpi" src="www/res/screen/android/splash-port-ldpi.png"/>
+        <splash density="port-mdpi" src="www/res/screen/android/splash-port-mdpi.png"/>
+        <splash density="port-hdpi" src="www/res/screen/android/splash-port-hdpi.png"/>
+        <splash density="port-xhdpi" src="www/res/screen/android/splash-port-xhdpi.png"/>
+        <splash density="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png"/>
+        <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png"/>
+
+        <splash density="land-ldpi" src="www/res/screen/android/splash-land-ldpi.png"/>
+        <splash density="land-mdpi" src="www/res/screen/android/splash-land-mdpi.png"/>
+        <splash density="land-hdpi" src="www/res/screen/android/splash-land-hdpi.png"/>
+        <splash density="land-xhdpi" src="www/res/screen/android/splash-land-xhdpi.png"/>
+        <splash density="land-xxhdpi" src="www/res/screen/android/splash-land-xxhdpi.png"/>
+        <splash density="land-xxxhdpi" src="www/res/screen/android/splash-land-xxxhdpi.png"/>
+
+    </platform>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="android-targetSdkVersion" value="28" />
+    <preference name="phonegap-version" value="cli-9.0.0" />
+    <icon src="www/icon.png" />
+  
+</widget>
+
+ <!--
+        <icon density="ldpi" src="www/res/icon/android/ldpi.png"/>
+        <icon density="mdpi" src="www/res/icon/android/mdpi.png"/>
+        <icon density="hdpi" src="www/res/icon/android/hdpi.png"/>
+        <icon density="xhdpi" src="www/res/icon/android/xhdpi.png"/>
+        <icon density="xxhdpi" src="www/res/icon/android/xxhdpi.png"/>
+        <icon density="xxxhdpi" src="www/res/icon/android/xxxhdpi.png"/>
+
+    <platform name="android">
+       
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        <icon src="res/mipmap-hdpi/launcher.png" density="hdpi" />
+        <icon src="res/mipmap-mdpi/launcher.png" density="mdpi" />
+    
+        <icon src="res/mipmap-xhdpi/launcher.png" density="xhdpi" />
+        <icon src="res/mipmap-xxhdpi/launcher.png" density="xxhdpi" />
+        <icon src="res/mipmap-xxxhdpi/launcher.png" density="xxxhdpi" />
+
+        <icon src="www/res/mipmap-mdpi/launcher.png" density="mdpi" />
+        <icon src="www/res/mipmap-hdpi/launcher.png" density="hdpi" />
+        <icon src="www/res/mipmap-xhdpi/launcher.png" density="xhdpi" />
+        <icon src="www/res/mipmap-xxhdpi/launcher.png" density="xxhdpi" />
+        <icon src="www/res/mipmap-xxxhdpi/launcher.png" density="xxxhdpi" />
+    </platform>          -->
