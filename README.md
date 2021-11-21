@@ -1,2 +1,2 @@
 # Scrambly-Word-PhoneGap
-A quick word game developed for PhoneGap for Android.
+Scrambly Word is a quick puzzle game developed for Android with PhoneGap. Also works on the Web.
